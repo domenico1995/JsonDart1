@@ -44,4 +44,8 @@ class Museo {
     return data;
   }
 
+  @override
+  String toString() {
+    return "${this._item} ${this._name} ${this._lat} ${this._lon}";
+  }
 }

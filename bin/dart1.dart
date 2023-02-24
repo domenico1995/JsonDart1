@@ -3,17 +3,16 @@ import 'dart:io';
 import 'Museo.dart';
 
 void main(List<String> arguments) {
-  File file = File("query.json");
+  print("inserire percorso file (con formato): ");
+  String? nome = stdin.readLineSync();
 
+  File file = File(nome!);
   String contenuti = file.readAsStringSync();
   var tagObjsJson = jsonDecode(contenuti) as List;
   List<Museo> list =
       tagObjsJson.map((tagJson) => Museo.fromJson(tagJson)).toList();
 
   for (var i = 0; i < list.length; i++) {
-    print(list[i].item);
-    print(list[i].name);
-    print(list[i].lat);
-    print(list[i].lon);
+    print(list[i].toString());
   }
 }

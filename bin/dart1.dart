@@ -1,18 +1,17 @@
 import 'dart:convert';
-import 'dart:io';
+import 'dart:io' as io;
 import 'Museo.dart';
+import 'dart:html' as html;
 
 void main(List<String> arguments) {
-  print("inserire percorso file (con formato): ");
-  String? nome = stdin.readLineSync();
+  /*print("inserire percorso file (con formato): ");
+  String? nome = io.stdin.readLineSync();
 
-  File file = File(nome!);
+  io.File file = io.File(nome!);
   String contenuti = file.readAsStringSync();
   var tagObjsJson = jsonDecode(contenuti) as List;
   List<Museo> list =
-      tagObjsJson.map((tagJson) => Museo.fromJson(tagJson)).toList();
+      tagObjsJson.map((tagJson) => Museo.fromJson(tagJson)).toList();*/
 
-  for (var i = 0; i < list.length; i++) {
-    print(list[i].toString());
-  }
+  html.querySelector('#output')?.text = 'Your Dart app is running.';
 }
